@@ -6,6 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="/css/style.css">
+    <style>
+        form {
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
@@ -46,15 +51,35 @@
                 <!-- <td>
                     <%= data[i].address %>
                 </td> -->
-                <td>
+                <td style="display: flex">
                     <a href="/detail/user/<%=data[i].id%>" target="_blank">Detail</a>
-                    <button>Edit</button>
-                    <button>Delete</button>
+                    <form action="/edit/user/<%=data[i].id%>" method="GET">
+                        <button type="submit">Edit</button>
+                    </form>
+                    <form action="/delete/user" method="POST">
+                        <button>Delete</button>
+                        <input hidden type="text" value="<%=data[i].id%>" name="userId" />
+                    </form>
                 </td>
             </tr>
             <% } %>
     </table>
 
+    <form action="/create-new-user" method="POST">
+        <label>Email</label><br>
+        <input name="email"><br>
+        <label>First name:</label><br>
+        <input name="firstName"><br>
+        <label>Last name:</label><br>
+        <input name="lastName"><br>
+        <label>Address</label><br>
+        <input name="address"><br><br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+    </form>
     <!-- <img src="/image/NODEJSBASIC4.png" /> -->
 </body>
 

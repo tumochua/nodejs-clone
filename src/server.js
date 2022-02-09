@@ -7,16 +7,14 @@ import connection from './configs/connectDB'
 const app = express();
 const port = process.env.PORT || 8080;
 
+app.use(express.urlencoded({
+    extended: true
+}));
+app.use(express.json());
 
 configViewEngine(app);
-initWebRoute(app)
 
-// app.get('/', (req, res) => {
-//     res.render('test/index.ejs')
-// })
-// app.get('/about', (req, res) => {
-//     res.send(`I'm Eric!`)
-// })
+initWebRoute(app)
 
 app.listen(port, () => {
     console.log(`Example app listening at http://localhost:${port}`)

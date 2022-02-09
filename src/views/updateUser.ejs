@@ -1,0 +1,45 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>update user</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        tr:hover {
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <form style="text-align: center;" action="/update-user" method="POST">
+        <label>Email</label><br>
+        <input name="email" value="<%= data[0].email %>"><br>
+        <label>First name:</label><br>
+        <input name="firstName" value="<%= data[0].firstName %>"><br>
+        <label>Last name:</label><br>
+        <input name="lastName" value="<%= data[0].lastName %>"><br>
+        <label>Address</label><br>
+        <input name="address" value="<%= data[0].address %>"><br><br>
+        <input name="id" value="<%= data[0].id %>" hidden><br><br>
+        <div>
+            <button type="submit">Submit</button>
+        </div>
+
+    </form>
+</body>
+
+</html>
